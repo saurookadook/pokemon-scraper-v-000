@@ -26,8 +26,6 @@ class Pokemon
     #     binding.pry
     #     return pokemon_obj
     #   else
-    sefl.all.each do |pokemon_obj|
-      if alter_hp(hp, db)
         pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
         # binding.pry
         # self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: (db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0]), db: db)
