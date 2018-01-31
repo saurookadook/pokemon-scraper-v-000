@@ -23,11 +23,6 @@ class Pokemon
   def self.find(id, db)
     db.execute("SELECT * FROM pokemon WHERE id = ?", id)
     binding.pry
-    # self.all.each do |pokemon_obj|
-    #   if pokemon_obj.id == id
-    #     return pokemon_obj
-    #   end
-    # end
   end
 
   # def self.find(id, db)
