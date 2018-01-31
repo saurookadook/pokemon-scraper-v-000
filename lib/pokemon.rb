@@ -23,7 +23,7 @@ class Pokemon
   def self.find(id, db)
     pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
     # binding.pry
-    self.new(id: pokemon_array[0][0], name: pokemon_array[0][1], type: pokemon_array[2], hp: 60, db: db)
+    self.new(id: pokemon_array[0], name: pokemon_array[0][1], type: pokemon_array[2], hp: 60, db: db)
   end
 
   # def self.find(id, db)
