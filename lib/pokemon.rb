@@ -23,6 +23,7 @@ class Pokemon
   def self.find(id, db)
     self.all.each do |pokemon_obj|
       if pokemon_obj.id == id
+        binding.pry
         return pokemon_obj
       else
         pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
