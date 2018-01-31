@@ -30,6 +30,7 @@ class Pokemon
     binding.pry
     name = self.name
     db.execute("UPDATE pokemon SET hp = ? WHERE name = ?", hp, name)
+    db.execute("SELECT * FROM pokemon WHERE name = ?", name)
   end
 
   # def self.find(id, db)
