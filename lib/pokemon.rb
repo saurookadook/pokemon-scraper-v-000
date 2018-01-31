@@ -26,6 +26,10 @@ class Pokemon
     self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
   end
 
+  def self.alter_hp(hp, db)
+    db.execute("UPDATE pokemon SET hp = ? WHERE hp = 60", hp)
+  end
+
   # def self.find(id, db)
   #   self.all.each do |pokemon_obj|
   #     if pokemon_obj.id == id
