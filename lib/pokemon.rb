@@ -21,6 +21,7 @@ class Pokemon
   end
 
   def self.find(id, db)
+    binding.pry
     current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]
     if current_hp
       pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
