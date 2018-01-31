@@ -26,7 +26,7 @@ class Pokemon
     #     binding.pry
     #     return pokemon_obj
     #   else
-    if current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]
+    if (current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]).exist?
       pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
       self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: current_hp, db: db)
     else
