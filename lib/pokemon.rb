@@ -28,7 +28,7 @@ class Pokemon
     #   else
         pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
         # binding.pry
-        self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
+        self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: (db.execute("SELECT hp FROM pokemon WHERE id = ?", id)), db: db)
     #   end
     # end
   end
