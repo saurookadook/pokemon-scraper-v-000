@@ -21,15 +21,16 @@ class Pokemon
   end
 
   def self.find(id, db)
-    pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
-    # binding.pry
-    self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
+    self.all.each do |pokemon_obj|
+      if pokemon_obj.id == id
+        pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
+        # binding.pry
+        self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
   end
 
   def alter_hp(hp, db)
     # binding.pry
     db.execute("UPDATE pokemon SET hp = ? WHERE name = ?", hp, self.name)
-    binding.pry
   end
 
   # def self.find(id, db)
