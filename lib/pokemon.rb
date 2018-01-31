@@ -21,14 +21,14 @@ class Pokemon
   end
 
   def self.find(id, db)
-    current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]
-    if current_hp
+    # current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]
+    # if current_hp
       pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
       self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: current_hp, db: db)
-    else
-      pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
-      self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
-    end
+    # else
+    #   pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
+    #   self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
+    # end
   end
 
   def alter_hp(hp, db)
