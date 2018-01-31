@@ -26,7 +26,7 @@ class Pokemon
     self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: 60, db: db)
   end
 
-  def self.alter_hp(hp, db)
+  def alter_hp(hp, db)
     binding.pry
     db.execute("UPDATE pokemon SET hp = ? WHERE name = ?", hp, self.name)
   end
