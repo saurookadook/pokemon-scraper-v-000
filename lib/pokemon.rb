@@ -27,10 +27,8 @@ class Pokemon
     #     return pokemon_obj
     #   else
     if current_hp = db.execute("SELECT hp FROM pokemon WHERE id = ?", id)[0][0]
-        {pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
-        self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: current_hp, db: db)}
-    #   end
-    # end
+      pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = ?", id)[0]
+      self.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: current_hp, db: db)
   end
 
   def alter_hp(hp, db)
